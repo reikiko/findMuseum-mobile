@@ -35,29 +35,26 @@ class RegisterResponseModel {
 class Data {
   Data({
     required this.name,
+    required this.username,
     required this.email,
-    required this.age,
-    required this.location,
-    required this.role,
+    required this.password,
     required this.updatedAt,
     required this.createdAt,
     required this.id,
   });
   late final String name;
+  late final String username;
   late final String email;
-  late final String age;
-  late final String location;
-  late final String role;
+  late final String password;
   late final String updatedAt;
   late final String createdAt;
   late final int id;
 
   Data.fromJson(Map<String, dynamic> json) {
     name = json['name'];
+    username = json['username'];
     email = json['email'];
-    age = json['age'];
-    location = json['location'];
-    role = json['role'];
+    password = json['password'];
     updatedAt = json['updated_at'];
     createdAt = json['created_at'];
     id = json['id'];
@@ -66,10 +63,9 @@ class Data {
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
     _data['name'] = name;
+    _data['username'] = username;
     _data['email'] = email;
-    _data['age'] = age;
-    _data['location'] = location;
-    _data['role'] = role;
+    _data['password'] = password;
     _data['updated_at'] = updatedAt;
     _data['created_at'] = createdAt;
     _data['id'] = id;

@@ -2,12 +2,10 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:travelbuddies_mobile/config.dart';
-import 'package:travelbuddies_mobile/models/add_plan_request_model.dart';
-import 'package:travelbuddies_mobile/models/add_plan_response_model.dart';
-import 'package:travelbuddies_mobile/models/destination_response_model.dart';
+import 'package:travelbuddies_mobile/models/museum_response_model.dart';
 import 'package:travelbuddies_mobile/models/login_request_model.dart';
 import 'package:travelbuddies_mobile/models/login_response_model.dart';
-import 'package:travelbuddies_mobile/models/plan_response.dart';
+import 'package:travelbuddies_mobile/models/city_response_model.dart';
 import 'package:travelbuddies_mobile/models/register_request_model.dart';
 import 'package:travelbuddies_mobile/models/register_response_model.dart';
 import 'package:travelbuddies_mobile/models/user_response_model.dart';
@@ -55,25 +53,6 @@ class APIService {
     return registerResponseJson(response.body);
   }
 
-  static Future<AddPlanResponseModel> addPlan(PlanRequestModel model) async {
-    var loginDetails = await SharedServices.loginDetails();
-
-    Map<String, String> requestHeaders = {
-      'Content-Type': 'application/json',
-    };
-
-    var url =
-        Uri.http(Config.apiURL, '/api/user/${loginDetails?.data.id}/plan');
-
-    var response = await client.post(
-      url,
-      headers: requestHeaders,
-      body: jsonEncode(model.toJson()),
-    );
-
-    return addPlanResponseJson(response.body);
-  }
-
   static Future<UserResponseModel> getUserProfile() async {
     var loginDetails = await SharedServices.loginDetails();
     Map<String, String> requestHeaders = {
@@ -93,14 +72,13 @@ class APIService {
     // }
   }
 
-  static Future<List<PlanResponseModel>> getUserPlan() async {
+  static Future<List<CityResponseModel>> getCities() async {
     var loginDetails = await SharedServices.loginDetails();
     Map<String, String> requestHeaders = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${loginDetails!.token}'
     };
 
-    var url = Uri.http(Config.apiURL, '/api/user/${loginDetails.data.id}/plan');
+    var url = Uri.http(Config.apiURL, '/api/city/');
 
     var response = await client.get(
       url,
@@ -109,7 +87,7 @@ class APIService {
     print(response.body);
 
     //Shared Services
-    return planResponseJson(response.body);
+    return cityResponseJson(response.body);
     // }
   }
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
-import 'package:travelbuddies_mobile/screens/auth/login_page.dart';
-import 'package:travelbuddies_mobile/screens/auth/register_page.dart';
-import 'package:travelbuddies_mobile/screens/home/home.dart';
-import 'package:travelbuddies_mobile/screens/main_page.dart';
-import 'package:travelbuddies_mobile/screens/splash_screen/splash.dart';
-import 'package:travelbuddies_mobile/services/shared_services.dart';
+import 'package:findMuseum_mobile/screens/auth/login_page.dart';
+import 'package:findMuseum_mobile/screens/auth/register_page.dart';
+import 'package:findMuseum_mobile/screens/home/home.dart';
+import 'package:findMuseum_mobile/screens/main_page.dart';
+import 'package:findMuseum_mobile/screens/splash_screen/splash.dart';
+import 'package:findMuseum_mobile/services/shared_services.dart';
 
 Widget _defaultHome = const LoginPage();
 
@@ -19,7 +19,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.

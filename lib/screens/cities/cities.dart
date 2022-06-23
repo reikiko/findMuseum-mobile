@@ -6,7 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:travelbuddies_mobile/screens/home/detail_destination.dart';
+import 'package:travelbuddies_mobile/screens/home/detail_museum.dart'
 
 Future<List<DestinationData>> fetchDestination() async {
   final response =

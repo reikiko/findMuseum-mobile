@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:travelbuddies_mobile/screens/account/account.dart';
-import 'package:travelbuddies_mobile/screens/destination/destination.dart';
-import 'package:travelbuddies_mobile/screens/home/home.dart';
-import 'package:travelbuddies_mobile/screens/plan/plan.dart';
+import 'package:findMuseum_mobile/screens/account/account.dart';
+import 'package:findMuseum_mobile/screens/cities/cities.dart';
+import 'package:findMuseum_mobile/screens/home/home.dart';
+import 'package:findMuseum_mobile/screens/plan/plan.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -17,7 +17,6 @@ class _MainPageState extends State<MainPage> {
   int currentIndex = 0;
   final screens = [
     Home(),
-    PlanPage(),
     DestinationPage(),
     AccountPage(),
   ];
@@ -41,11 +40,7 @@ class _MainPageState extends State<MainPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notes),
-            label: "Plan",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.place),
-            label: "Destination",
+            label: "Cities",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

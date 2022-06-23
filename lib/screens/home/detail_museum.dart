@@ -1,28 +1,20 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class DetailDestination extends StatefulWidget {
+class DetailMuseum extends StatefulWidget {
   final String name;
-  final String location;
   final String desc;
   final String img;
-  final int price;
-  final String address;
-  DetailDestination(
+  DetailMuseum(
       {required this.name,
-      required this.location,
       required this.desc,
-      required this.img,
-      required this.price,
-      required this.address});
+      required this.img,});
   @override
-  State<DetailDestination> createState() => _DetailDestinationState();
+  State<DetailMuseum> createState() => _DetailMuseumState();
 }
 
-class _DetailDestinationState extends State<DetailDestination> {
+class _DetailMuseumState extends State<DetailMuseum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,27 +49,6 @@ class _DetailDestinationState extends State<DetailDestination> {
                   Text(widget.desc),
                   const SizedBox(
                     height: 20.0,
-                  ),
-                  Wrap(
-                    spacing: 8.0, // gap between adjacent chips
-                    runSpacing: 4.0, // gap between lines
-                    direction: Axis.horizontal, // main axis (rows or columns)
-                    children: [
-                      const Text(
-                        'Address : ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(widget.address)
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      const Text(
-                        'Price : ',
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(widget.price.toString())
-                    ],
                   ),
                 ],
               ),
