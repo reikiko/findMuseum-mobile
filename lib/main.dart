@@ -29,7 +29,7 @@ class extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        fontFamily: "Poppins",
+        fontFamily: "Rubik",
         primaryColor: HexColor('#70DAD3'),
         backgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSwatch().copyWith(

@@ -86,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 18,
-                  fontFamily: "Poppins",
+                  fontFamily: "Rubik",
                 ),
               ),
             ),
